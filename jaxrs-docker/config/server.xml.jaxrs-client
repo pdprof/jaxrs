@@ -4,6 +4,7 @@
     <featureManager>
         <feature>servlet-4.0</feature>
         <feature>jsp-2.3</feature>
+        <feature>jaxrs-2.1</feature>
         <feature>jaxrsClient-2.1</feature>
         <feature>eventLogging-1.0</feature>
         <feature>requestTiming-1.0</feature>
@@ -14,10 +15,10 @@
 
     <eventLogging logMode="entryExit" minDuration="1ms"/>
 
-    <requestTiming slowRequestThreshold="5s" hungRequestThreshold="10m">
+    <requestTiming slowRequestThreshold="5m" hungRequestThreshold="10m">
     </requestTiming>
 
-    <logging  traceSpecification="com.ibm.ws.session.*=all:com.ibm.ws.webcontainer*=all:com.ibm.wsspi.webcontainer*=all:RRA=all:WAS.j2c=all:com.ibm.ws.jdbc.*=all:Transaction=all:ConnLeakLogic=all:jmx.rest.server.connector=all:com.ibm.ws.jmx.connector.server.rest.*=all"
+    <logging  traceSpecification="com.ibm.ws.jaxrs*=all:com.ibm.websphere.jaxrs*=all:org.apache.wink.*=all:org.apache.cxf.*=all"
       traceFileName="trace.log"
       maxFileSize="20"
       maxFiles="10"
@@ -26,5 +27,6 @@
     <!-- Automatically expand WAR files and EAR files -->
     <applicationManager autoExpand="true"/>
 
+    <webApplication id="jaxrs" location="jaxrs.war"/>
     <webApplication id="jaxrs.client" location="jaxrs.client.war"/>
 </server>
