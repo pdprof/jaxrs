@@ -7,6 +7,5 @@
 
 # DOCKER_HOST=192.168.122.1
 
-# Setup for SIBus
-docker build -t jaxrs-client -f Dockerfile.jaxrs-client .
+docker build -t jaxrs -f Dockerfile .
 

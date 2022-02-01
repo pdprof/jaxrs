@@ -26,7 +26,7 @@ RUN dnf install -y make procps-ng net-tools gdb nmap
 RUN mkdir -p /pdprof/dump \
     && chown -R 1001:0 /pdprof
 # COPY --chown=1001:0 trapit /config/
-COPY --chown=1001:0 config/server.xml.jaxrs-client /config/server.xml
+COPY --chown=1001:0 config/server.xml /config/server.xml
 COPY --chown=1001:0 config/jvm.options /config/
 COPY --chown=1001:0 apps/jaxrs.client.war /config/apps/
 

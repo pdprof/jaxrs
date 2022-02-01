@@ -48,7 +48,7 @@ public class JaxrsClientServlet extends HttpServlet {
 		headers.putSingle("Expect", "100-continue");
 		
 		try {
-			res = c.target("http://localhost:9080/jaxrs.client/snoop").request().headers(headers).post(entity, String.class);
+			res = c.target("http://localhost:9080/jaxrs.client/snoops").request().headers(headers).post(entity, String.class);
 		} catch (Exception e) {
 			res = "[Error]:" + e.toString();
 			System.out.println("*** JaxrsClientServlet ***");
