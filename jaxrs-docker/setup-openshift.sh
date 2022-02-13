@@ -20,11 +20,11 @@ docker login `oc registry info`
 # pull openliberty docker repository
 BUILD_DATE=`date +%Y%m%d`
 
-docker build -t jaxrs-client -f Dockerfile.jaxrs-client .
+docker build -t jaxrs -f Dockerfile .
 
-docker tag jaxrs-client:latest $(oc registry info)/$(oc project -q)/jaxrs-client:${BUILD_DATE}
+docker tag jaxrs:latest $(oc registry info)/$(oc project -q)/jaxrs:${BUILD_DATE}
 
-docker push $(oc registry info)/$(oc project -q)/jaxrs-client:${BUILD_DATE}
+docker push $(oc registry info)/$(oc project -q)/jaxrs:${BUILD_DATE}
 
 sed s/image-registry.openshift-image-registry.svc:5000/default-route-openshift-image-registry.apps-crc.testing/g kubernetes.yaml.org > kubernetes.yaml
 sed s/"\[project-name\]"/$(oc project -q)/g kubernetes.yaml

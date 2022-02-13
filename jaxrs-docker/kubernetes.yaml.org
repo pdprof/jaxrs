@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: jaxrs-client-deployment
+  name: jaxrs-deployment
   labels:
-    app: jaxrs-client
+    app: jaxrs
 spec:
   selector:
     matchLabels:
-      app: jaxrs-client
+      app: jaxrs
   template:
     metadata:
       labels:
-        app: jaxrs-client
+        app: jaxrs
     spec:
       containers:
       - name: jaxrs-client-container
-        image: default-route-openshift-image-registry.apps-crc.testing/[project-name]/jms-sib-client:[build-date]
+        image: default-route-openshift-image-registry.apps-crc.testing/[project-name]/jaxrs:[build-date]
         ports:
         - containerPort: 9080
       imagePullSecrets:
@@ -24,10 +24,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: jaxrs-client-service
+  name: jaxrs-service
 spec:
   selector:
-    app: jaxrs-client
+    app: jaxrs
   ports:
   - protocol: TCP
     port: 9080
@@ -35,8 +35,8 @@ spec:
 apiVersion: v1
 kind: Route
 metadata:
-  name: jaxrs-client-route
+  name: jaxrs-route
 spec:
   to:
     kind: Service
-    name: jaxrs-client-service
+    name: jaxrs-service

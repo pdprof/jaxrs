@@ -32,6 +32,6 @@ setup-openshift.sh
 
 Now you can access to follow URLs.
 
-- [jaxrs.client](http://jaxrs-client-route-default.apps-crc.testing/jaxrs.client/)
+- [jaxrs.client](http://jaxrs-route-default.apps-crc.testing/jaxrs.client/)
 
 Other test steps are same with docker.
