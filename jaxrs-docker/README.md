@@ -1,4 +1,4 @@
-# JMS Application
+# JAX-RS Application
 
 ## Requirements
 
@@ -9,30 +9,16 @@
 ### Build docker image
 
 ```
-vi setup-docker.sh # Edit DOCKER_HOST ip address for your environment
 ./setup-docker.sh
 ```
 
 ### Start docker 
 
-To start JMS servers (ActiveMQ, IBM MQ, WebSphere Liberty SIBus)
-
 ```
-./amq-start.sh
-./mq-start.sh
-./jms-sib-start.sh
+./jaxrs-start.sh
 ```
 
-To start JMS client for each server. All jms server use 9080 and 9443 ports. Please stop liberty before to start another server.
-
-```
-mkdir ~/pdprof
-./jms-amq-start.sh
-./jms-mq-start.sh
-./jms-sib-client-start.sh
-```
-
-Now you can access http://localhost:9080/jms/
+Now you can access http://localhost:9080/jaxrs.client/
 
 
 ## Test on OpenShift
@@ -46,8 +32,6 @@ setup-openshift.sh
 
 Now you can access to follow URLs.
 
-- [ActiveMQ client](http://jms-amq-route-default.apps-crc.testing/jms/)
-- [IBM MQ client](http://jms-mq-route-default.apps-crc.testing/jms/)
-- [SIBus client](http://jms-sib-client-route-default.apps-crc.testing/jms/)
+- [jaxrs.client](http://jaxrs-client-route-default.apps-crc.testing/jaxrs.client/)
 
 Other test steps are same with docker.
