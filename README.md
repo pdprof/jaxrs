@@ -5,7 +5,7 @@ Java API for RESTful Web Services (JAX-RS)
 ## Import eclipse project
 
 ```
-git clone https://github.com/pdprof/security-auth.git
+git clone https://github.com/pdprof/jaxrs.git
 ```
 
 - Start eclipse
