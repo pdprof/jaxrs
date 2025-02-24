@@ -24,6 +24,10 @@
 		<input type="text" id="receive_timeout" name="timeout" value="10000" size="10"></br> 
 		<label for="name">Sleep time(ms):</label>
 		<input type="text" id="receive_sleep" name="sleep" value="20000" size="10"></br>
+		<label for="name">Target Host:</label>
+		<input type="text" id="receive_host" name="host" value="localhost" size="20"></br>
+		<label for="name">Target Port:</label> 
+		<input type="text" id="receive_port" name="port" value="9080" size="20"></br>
 		<input type="submit" id="recieve_submit" name="submit" value="submit">
 	</form>
 	<h2>Simple JAX-RS client</h2>
