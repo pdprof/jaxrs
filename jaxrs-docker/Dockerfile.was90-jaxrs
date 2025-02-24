@@ -1,0 +1,7 @@
+FROM ibmcom/websphere-traditional:9.0.5.22
+ENV ENABLE_BASIC_LOGGING=true
+COPY was90/PASSWORD /tmp/PASSWORD
+COPY --chown=was:root was90/installApp.py /work/config/installApp.py
+COPY --chown=was:root apps/jaxrs.war /work/config/
+COPY --chown=was:root apps/jaxrs.client.war /work/config/
+RUN /work/configure.sh
